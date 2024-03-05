@@ -1,0 +1,32 @@
+<div class="flex h-screen w-screen overflow-hidden">
+  <div class="border-2 w-1/2 border-blue-300 my-8 mx-8 overflow-auto relative">
+    <form class="flex flex-col items-center h-min absolute w-full">
+      <header class="flex flex-col gap-8 items-center my-8">
+        <h3 class="text-3xl font-bold flex text-center items-center">Registro de empleados</h3>
+        <img src="assets/img/registroEmpleado.webp" class="h-auto max-h-60 aspect-auto">
+      </header>
+      <article class="w-full flex flex-col items-center">
+        <div class="flex w-4/5 items-center flex-wrap">
+          <span class="text-lg font-bold m-4 mr-0 block w-1/6">Nombre:</span><input type="text" name="nombre" autocomplete="off"  placeholder="Nombre" [(ngModel)] = "textNombre" class=" ml-4 items-start border-2 w-3/4 border-sky-100 rounded">
+        </div>
+        <div class="flex w-4/5 items-center flex-wrap">
+          <span class="text-lg font-bold m-4 mr-0 block w-1/6">Apellido:</span><input type="text" name ="Apellido" autocomplete="off"   placeholder="Apellido" [(ngModel)] = "textApellido" class="ml-4 border-2 items-start w-3/4 border-sky-100 rounded">
+        </div>
+        <div class="flex w-4/5 items-center flex-wrap">
+          <span class="text-lg font-bold m-4 mr-0 block w-1/6">Cargo:</span><input type="text" name = "cargo" autocomplete="off"   placeholder="Cargo" [(ngModel)] = "textCargo" class="ml-4 items-start border-2 w-3/4 border-sky-100 rounded">
+        </div>
+        <div class="flex w-4/5 items-center flex-wrap">
+          <span class="text-lg font-bold m-4 mr-0 block w-1/6">Sueldo:</span><input type="number" name="sueldo" autocomplete="off"  placeholder="Sueldo" [(ngModel)] ="textSalario"  class="ml-4 border-2 items-start w-3/4 border-sky-100 rounded">
+        </div>
+      </article>
+      <footer class="my-8 items-center w-full flex justify-center flex-wrap gap-4">
+        <button class="bg-blue-500 rounded border-2 py-2 px-4 text-center text-white font-bold" (click)="addEmpleado()">Agregar</button>
+        <button class="bg-blue-500 rounded border-2 py-2 px-4 text-center text-white font-bold">Eliminar</button>
+      </footer>
+    </form>
+  </div>
+  <div class="border-2 w-1/2 border-blue-300 my-8 mr-8 overflow-auto text-center">
+    <h3 class="text-3xl font-bold my-8">Lista de empleados</h3>
+    <app-hijo *ngFor="let empleado of listaEmpleados; let id = index" [lista]="empleado" [id] = "id"></app-hijo>
+  </div>
+</div>

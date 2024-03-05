@@ -1,0 +1,9 @@
+<ul class="my-8 text-start ml-[20%]">
+  <div class="mb-4 " >
+    <a [routerLink]="['/EditEmpleado',id]">{{lista.nombre}} {{lista.apellido}} {{lista.cargo}} → Sueldo: {{lista.sueldo}}</a>
+    <app-input-button (clickB)="addCaracteristica($event)"></app-input-button>
+    <li *ngFor="let caracter of listaCaracteristicas">
+      {{caracter}}
+    </li>
+  </div>
+</ul>
