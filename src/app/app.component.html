@@ -23,7 +23,8 @@
               2 2-.897 2-2 2z">
             </path>
           </svg>
-        <span class="text-black text-xl">Iniciar Sesion</span>
+        <span *ngIf="!log" class="text-black text-xl">Iniciar Sesion</span>
+        <span *ngIf="log" class="text-black text-xl">Cerrar Sesion</span>
       </a>
     </div>
     </nav>

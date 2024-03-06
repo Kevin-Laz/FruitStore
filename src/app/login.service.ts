@@ -23,4 +23,7 @@ export class LoginService {
   getToken(){
     return this.token;
   }
+  tokenIsEmpty(){
+    return this.token?true:false;
+  }
 }

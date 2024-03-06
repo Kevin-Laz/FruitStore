@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Empleado } from './Empleado/empleado.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpleadoService {
 
-  constructor(private _http:HttpClient) {
+  constructor(private _http:HttpClient, private _login:LoginService) {
 
   }
   setBD(lista:Empleado[]){
@@ -18,7 +19,8 @@ export class EmpleadoService {
     return this._http.put(`https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos/${id}.json`,new Empleado(nombre,apellido,cargo,suledo))
   }
   getEmpleados():Observable<any>{
-    return this._http.get('https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos.json');
+    const token = this._login.getToken();
+    return this._http.get('https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos.json?auth'+token);
   }
   getEmpleado(id:number){
     //return this.listaEmpleados[id];

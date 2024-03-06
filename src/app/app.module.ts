@@ -14,6 +14,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditEmpleadoComponent } from './edit-empleado/edit-empleado.component';
 import { LoginComponent } from './login/login.component';
+import { EmpleadoService } from './empleado.service';
+import { LoginService } from './login.service';
+import { LoadApiService } from './load-api.service';
 
 const appRoutes: Routes =[
   {path:'',component: InicioComponent},
@@ -40,7 +43,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes), HttpClientModule
   ],
-  providers: [],
+  providers: [EmpleadoService,LoginService, LoadApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
