@@ -24,7 +24,7 @@
             </path>
           </svg>
         <span *ngIf="!log" class="text-black text-xl">Iniciar Sesion</span>
-        <span *ngIf="log" class="text-black text-xl">Cerrar Sesion</span>
+        <a *ngIf="log"><span  class="text-black text-xl" (click)="logOut()">Cerrar Sesion</span></a>
       </a>
     </div>
     </nav>

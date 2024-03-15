@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { EmpleadoService } from './empleado.service';
 import { LoginService } from './login.service';
 import { LoadApiService } from './load-api.service';
+import {CookieService} from 'ngx-cookie-service';
 
 const appRoutes: Routes =[
   {path:'',component: InicioComponent},
@@ -43,7 +44,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes), HttpClientModule
   ],
-  providers: [EmpleadoService,LoginService, LoadApiService],
+  providers: [EmpleadoService,LoginService, LoadApiService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

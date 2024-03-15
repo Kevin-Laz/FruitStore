@@ -20,11 +20,12 @@ export class EmpleadoService {
   }
   getEmpleados():Observable<any>{
     const token = this._login.getToken();
-    return this._http.get('https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos.json?auth'+token);
+    return this._http.get('https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos.json?auth='+token);
   }
   getEmpleado(id:number){
+    const token = this._login.getToken();
     //return this.listaEmpleados[id];
-    return this._http.get(`https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos/${id}.json`);
+    return this._http.get(`https://empleadosa-56f4c-default-rtdb.firebaseio.com/datos/${id}.json?auth=` + token);
   }
   updateEmpleado(id:number, empleado:Empleado){
     //this.listaEmpleados[id] = empleado;

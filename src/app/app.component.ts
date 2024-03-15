@@ -20,6 +20,9 @@ export class AppComponent implements AfterViewInit, OnInit  {
   ngAfterViewInit():void{
 
   }
-  log = this._login.tokenIsEmpty()
-
+  log = this._login.tokenIsEmpty();
+  logOut(){
+    this._login.logOut();
+    //console.log(this._login.getToken())
+  }
 }
